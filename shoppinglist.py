@@ -17,4 +17,3 @@ def show_shoppinglist():
     else:
         print("Deine Einkaufsliste ist leer!") # Message if shopping list is empty
 
-    
