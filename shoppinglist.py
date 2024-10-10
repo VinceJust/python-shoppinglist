@@ -5,13 +5,16 @@ shopping_list = []
 
 # Function to add items to the shopping list
 def add_item():
-    item = input("Welchen Artikel möchtest du deiner Liste hinzufügen? ") # Prompt for user to input a shopping item
-    shopping_list.append(item) # Adds item to the list
-    print(f"Der Artikel '{item}' wurde der Liste hinzugefügt!") # Confirms the item was added
+    item = input("Welchen Artikel möchtest du deiner Liste hinzufügen? ").strip()  # Trim whitespace
+    if item:  # Check if the input is not empty
+        shopping_list.append(item)  # Adds item to the list
+        print(f"Der Artikel '{item}' wurde der Liste hinzugefügt!")  # Confirms the item was added
+    else:
+        print("Du musst einen Artikel eingeben!")  # Informs the user if input is empty
 
 # Function to display the shopping list
 def show_shoppinglist():
-    if shopping_list:  # Corrected variable name
+    if shopping_list:  # Checks if the shopping list is not empty
         print("Deine Einkaufsliste:")  # Shows the current shopping list
         for item in shopping_list:
             print(f"- {item}")  # Prints each item in the list
